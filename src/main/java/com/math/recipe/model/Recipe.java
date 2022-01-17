@@ -18,8 +18,6 @@ public class Recipe {
     private String url;
     private String directions;
 
-//    private Difficulty difficulty;
-
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Ingredient> ingredients;
 
@@ -28,6 +26,9 @@ public class Recipe {
 
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
+
+    @Enumerated(value = EnumType.STRING)
+    private Difficulty difficulty;
 
     public String getDescription() {
         return description;
